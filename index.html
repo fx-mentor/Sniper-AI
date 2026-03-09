@@ -7,146 +7,59 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
-
 :root {
-  --bg: #212121;
-  --sidebar: #171717;
-  --input-bg: #2f2f2f;
-  --hover: #2a2a2a;
-  --border: #3a3a3a;
-  --text: #ececec;
-  --muted: #8e8e8e;
-  --accent: #FFD700;
-  --accent2: #FFA500;
+  --bg: #212121; --sidebar: #171717; --input-bg: #2f2f2f;
+  --hover: #2a2a2a; --border: #3a3a3a; --text: #ececec;
+  --muted: #8e8e8e; --accent: #FFD700; --accent2: #FFA500;
 }
-
-body {
-  font-family: 'Inter', -apple-system, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-}
+body { font-family:'Inter',-apple-system,sans-serif; background:var(--bg); color:var(--text); height:100vh; overflow:hidden; display:flex; }
 
 /* SIDEBAR */
-.sidebar {
-  width: 260px;
-  flex-shrink: 0;
-  background: var(--sidebar);
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  border-right: 1px solid var(--border);
-}
-
-.sidebar-top { padding: 12px; }
-
-.new-chat-btn {
-  display: flex; align-items: center; gap: 10px;
-  padding: 10px 12px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 14px;
-  color: var(--text);
-  border: none;
-  background: none;
-  width: 100%;
-  text-align: left;
-  transition: background 0.15s;
-}
-.new-chat-btn:hover { background: var(--hover); }
-
-.sl { font-size: 11px; color: var(--muted); padding: 16px 14px 6px; font-weight: 500; }
-
-.chat-history {
-  flex: 1; overflow-y: auto; padding: 0 8px;
-}
-.chat-history::-webkit-scrollbar { width: 4px; }
-.chat-history::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
-
-.hi {
-  padding: 9px 12px; border-radius: 8px; cursor: pointer;
-  font-size: 13px; color: var(--muted);
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-  transition: background 0.12s; margin-bottom: 1px;
-}
-.hi:hover { background: var(--hover); color: var(--text); }
-.hi.active { background: var(--hover); color: var(--text); }
-
-.sidebar-footer {
-  padding: 12px; border-top: 1px solid var(--border);
-  display: flex; flex-direction: column; gap: 4px;
-}
-
-.soc {
-  display: flex; align-items: center; gap: 10px;
-  padding: 9px 12px; border-radius: 8px;
-  text-decoration: none; font-size: 13px; color: var(--muted);
-  transition: background 0.12s, color 0.12s;
-}
-.soc:hover { background: var(--hover); color: var(--text); }
-
-.soc-icon {
-  width: 28px; height: 28px; border-radius: 6px;
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
-}
-.wa { background: #25D366; }
-.ig { background: linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); }
-
-.soc-info { line-height: 1.3; }
-.soc-info strong { display: block; color: var(--text); font-size: 13px; font-weight: 500; }
-.soc-info span { font-size: 11px; color: var(--muted); }
-
-.copy { font-size: 11px; color: var(--muted); padding: 8px 12px 4px; opacity: 0.55; }
+.sidebar { width:260px; flex-shrink:0; background:var(--sidebar); display:flex; flex-direction:column; height:100vh; border-right:1px solid var(--border); }
+.sidebar-top { padding:12px; }
+.new-chat-btn { display:flex; align-items:center; gap:10px; padding:10px 12px; border-radius:8px; cursor:pointer; font-size:14px; color:var(--text); border:none; background:none; width:100%; text-align:left; transition:background 0.15s; }
+.new-chat-btn:hover { background:var(--hover); }
+.sl { font-size:11px; color:var(--muted); padding:16px 14px 6px; font-weight:500; }
+.chat-history { flex:1; overflow-y:auto; padding:0 8px; }
+.chat-history::-webkit-scrollbar { width:4px; }
+.chat-history::-webkit-scrollbar-thumb { background:var(--border); border-radius:2px; }
+.hi { padding:9px 12px; border-radius:8px; cursor:pointer; font-size:13px; color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; transition:background 0.12s; margin-bottom:1px; }
+.hi:hover { background:var(--hover); color:var(--text); }
+.hi.active { background:var(--hover); color:var(--text); }
+.sidebar-footer { padding:12px; border-top:1px solid var(--border); display:flex; flex-direction:column; gap:4px; }
+.soc { display:flex; align-items:center; gap:10px; padding:9px 12px; border-radius:8px; text-decoration:none; font-size:13px; color:var(--muted); transition:background 0.12s,color 0.12s; }
+.soc:hover { background:var(--hover); color:var(--text); }
+.soc-icon { width:28px; height:28px; border-radius:6px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.wa { background:#25D366; }
+.ig { background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); }
+.soc-info { line-height:1.3; }
+.soc-info strong { display:block; color:var(--text); font-size:13px; font-weight:500; }
+.soc-info span { font-size:11px; color:var(--muted); }
+.copy { font-size:11px; color:var(--muted); padding:8px 12px 4px; opacity:.55; }
 
 /* MAIN */
 .main { flex:1; display:flex; flex-direction:column; height:100vh; overflow:hidden; }
-
-.topbar {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 14px 20px; flex-shrink: 0; border-bottom: 1px solid var(--border);
-}
-
+.topbar { display:flex; align-items:center; justify-content:space-between; padding:14px 20px; flex-shrink:0; border-bottom:1px solid var(--border); }
 .brand { display:flex; align-items:center; gap:10px; }
-
 .brand-name { font-size:16px; font-weight:700; color:var(--accent); }
 .brand-sub { font-size:11px; color:var(--muted); margin-top:1px; }
-
-.live-pill {
-  display:flex; align-items:center; gap:6px; font-size:12px;
-  color:#4ade80; background:rgba(74,222,128,0.08);
-  padding:4px 10px; border-radius:20px; border:1px solid rgba(74,222,128,0.2);
-}
-.ldot {
-  width:6px; height:6px; background:#4ade80; border-radius:50%;
-  animation:blink 1.8s ease-in-out infinite; box-shadow:0 0 6px #4ade80;
-}
+.live-pill { display:flex; align-items:center; gap:6px; font-size:12px; color:#4ade80; background:rgba(74,222,128,0.08); padding:4px 10px; border-radius:20px; border:1px solid rgba(74,222,128,0.2); }
+.ldot { width:6px; height:6px; background:#4ade80; border-radius:50%; animation:blink 1.8s ease-in-out infinite; box-shadow:0 0 6px #4ade80; }
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.4} }
 
 /* MESSAGES */
 .msgs-wrap { flex:1; overflow-y:auto; scroll-behavior:smooth; }
 .msgs-wrap::-webkit-scrollbar { width:5px; }
 .msgs-wrap::-webkit-scrollbar-thumb { background:var(--border); border-radius:3px; }
-
 .msgs-inner { max-width:780px; margin:0 auto; padding:24px 20px; }
 
 /* WELCOME */
-.welcome {
-  display:flex; flex-direction:column; align-items:center; justify-content:center;
-  min-height:60vh; text-align:center; padding:20px;
-}
+.welcome { display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:60vh; text-align:center; padding:20px; }
 .wicon { width:54px; height:54px; margin-bottom:18px; }
 .welcome h2 { font-size:26px; font-weight:700; color:var(--accent); margin-bottom:8px; }
 .welcome p { font-size:15px; color:var(--muted); max-width:440px; line-height:1.6; margin-bottom:28px; }
-
 .sugs { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; width:100%; max-width:520px; }
-.sc {
-  background:var(--input-bg); border:1px solid var(--border);
-  border-radius:12px; padding:14px 16px; cursor:pointer; text-align:left;
-  transition:border-color 0.15s, background 0.15s;
-}
+.sc { background:var(--input-bg); border:1px solid var(--border); border-radius:12px; padding:14px 16px; cursor:pointer; text-align:left; transition:border-color 0.15s,background 0.15s; }
 .sc:hover { border-color:var(--accent2); background:#383838; }
 .sc .si { font-size:20px; margin-bottom:6px; }
 .sc .st { font-size:13px; font-weight:600; color:var(--text); margin-bottom:3px; }
@@ -156,28 +69,16 @@ body {
 .mrow { display:flex; gap:14px; margin-bottom:22px; animation:fu 0.2s ease; }
 @keyframes fu { from{opacity:0;transform:translateY(5px)} to{opacity:1;transform:translateY(0)} }
 .mrow.user { flex-direction:row-reverse; }
-
-.av {
-  width:34px; height:34px; border-radius:50%;
-  flex-shrink:0; display:flex; align-items:center; justify-content:center;
-  font-size:13px; font-weight:700; margin-top:2px;
-}
+.av { width:34px; height:34px; border-radius:50%; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700; margin-top:2px; }
 .av.ai { background:linear-gradient(135deg,#2a1f00,#3d2e00); border:1.5px solid var(--accent2); color:var(--accent); font-size:10px; }
 .av.usr { background:#3a3a3a; color:var(--muted); font-size:16px; }
-
 .mc { flex:1; min-width:0; }
 .mn { font-size:12px; font-weight:600; color:var(--muted); margin-bottom:6px; }
 .mrow.user .mn { text-align:right; }
-
 .bbl { font-size:15px; line-height:1.7; color:var(--text); }
-.bbl.ubbl {
-  background:var(--input-bg); border-radius:18px 4px 18px 18px;
-  padding:12px 16px; display:inline-block; max-width:100%; float:right; clear:both;
-}
+.bbl.ubbl { background:var(--input-bg); border-radius:18px 4px 18px 18px; padding:12px 16px; display:inline-block; max-width:100%; float:right; clear:both; }
 .mimg { max-width:100%; max-height:260px; border-radius:10px; border:1px solid var(--border); margin-bottom:8px; display:block; object-fit:contain; }
 .mrow.user .mimg { margin-left:auto; }
-
-/* Markdown */
 .bbl strong { font-weight:600; color:#f0c040; }
 .bbl em { color:#93c5fd; font-style:italic; }
 .bbl code { font-family:'Menlo','Courier New',monospace; background:rgba(255,255,255,0.08); padding:1px 6px; border-radius:4px; font-size:13px; color:#86efac; }
@@ -185,8 +86,6 @@ body {
 .bbl ul { padding-left:20px; margin:6px 0; }
 .bbl li { margin-bottom:4px; }
 .bbl hr { border:none; border-top:1px solid var(--border); margin:12px 0; }
-
-/* Typing */
 .tdots { display:flex; gap:5px; align-items:center; padding:4px 0; }
 .tdots span { width:8px; height:8px; background:var(--muted); border-radius:50%; animation:tb 1.2s ease-in-out infinite; }
 .tdots span:nth-child(2){animation-delay:.15s} .tdots span:nth-child(3){animation-delay:.3s}
@@ -194,50 +93,23 @@ body {
 
 /* INPUT */
 .input-zone { padding:14px 20px 20px; background:var(--bg); flex-shrink:0; }
-
 .img-strip { display:flex; gap:8px; flex-wrap:wrap; max-width:780px; margin:0 auto 10px; }
 .thumb { position:relative; width:60px; height:60px; border-radius:8px; overflow:hidden; border:1px solid var(--border); flex-shrink:0; }
 .thumb img { width:100%; height:100%; object-fit:cover; }
 .rmv { position:absolute; top:2px; right:2px; width:16px; height:16px; background:rgba(0,0,0,0.75); border-radius:50%; color:#fff; font-size:10px; display:flex; align-items:center; justify-content:center; cursor:pointer; border:1px solid rgba(255,255,255,0.2); }
 .rmv:hover { background:#ef4444; }
-
-.ibox {
-  display:flex; align-items:flex-end; gap:8px;
-  background:var(--input-bg); border:1px solid var(--border);
-  border-radius:16px; padding:10px 12px;
-  max-width:780px; margin:0 auto; transition:border-color 0.2s;
-}
+.ibox { display:flex; align-items:flex-end; gap:8px; background:var(--input-bg); border:1px solid var(--border); border-radius:16px; padding:10px 12px; max-width:780px; margin:0 auto; transition:border-color 0.2s; }
 .ibox:focus-within { border-color:#555; }
-
-.att {
-  width:32px; height:32px; border-radius:8px; background:none; border:none;
-  color:var(--muted); cursor:pointer; font-size:18px;
-  display:flex; align-items:center; justify-content:center;
-  transition:color 0.15s; flex-shrink:0;
-}
+.att { width:32px; height:32px; border-radius:8px; background:none; border:none; color:var(--muted); cursor:pointer; font-size:18px; display:flex; align-items:center; justify-content:center; transition:color 0.15s; flex-shrink:0; }
 .att:hover { color:var(--text); }
-
-#inp {
-  flex:1; background:none; border:none; outline:none;
-  color:var(--text); font-family:'Inter',sans-serif; font-size:15px;
-  line-height:1.5; resize:none; min-height:32px; max-height:160px;
-  overflow-y:auto; scrollbar-width:none; align-self:center;
-}
+#inp { flex:1; background:none; border:none; outline:none; color:var(--text); font-family:'Inter',sans-serif; font-size:15px; line-height:1.5; resize:none; min-height:32px; max-height:160px; overflow-y:auto; scrollbar-width:none; align-self:center; }
 #inp::-webkit-scrollbar { display:none; }
 #inp::placeholder { color:var(--muted); }
-
-.sbtn {
-  width:34px; height:34px; border-radius:8px; background:var(--accent);
-  border:none; color:#000; cursor:pointer;
-  display:flex; align-items:center; justify-content:center; flex-shrink:0;
-  transition:opacity 0.15s, transform 0.1s;
-}
+.sbtn { width:34px; height:34px; border-radius:8px; background:var(--accent); border:none; color:#000; cursor:pointer; display:flex; align-items:center; justify-content:center; flex-shrink:0; transition:opacity 0.15s,transform 0.1s; }
 .sbtn:hover { opacity:.85; }
 .sbtn:active { transform:scale(.95); }
 .sbtn:disabled { opacity:.3; cursor:not-allowed; }
-
 .hint { text-align:center; font-size:11px; color:var(--muted); margin-top:10px; opacity:.6; }
-
 #fi { display:none; }
 
 @media(max-width:700px){
@@ -267,19 +139,13 @@ body {
       <div class="soc-icon wa">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       </div>
-      <div class="soc-info">
-        <strong>WhatsApp</strong>
-        <span>FX Snipers · +44 7417 446776</span>
-      </div>
+      <div class="soc-info"><strong>WhatsApp</strong><span>FX Snipers · +44 7417 446776</span></div>
     </a>
     <a class="soc" href="https://instagram.com/fx.snipers7" target="_blank" rel="noopener">
       <div class="soc-icon ig">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
       </div>
-      <div class="soc-info">
-        <strong>Instagram</strong>
-        <span>@fx.snipers7</span>
-      </div>
+      <div class="soc-info"><strong>Instagram</strong><span>@fx.snipers7</span></div>
     </a>
     <div class="copy">© 2024 FX Sniper. All rights reserved.</div>
   </div>
@@ -347,8 +213,12 @@ body {
 <input type="file" id="fi" accept="image/*" multiple onchange="hf(event)"/>
 
 <script>
-const API = "https://api.anthropic.com/v1/messages";
-  const API_KEY = "live_u4KwHI7oJ24KfQ4FfXrCh7cf87AdDyt0cc8qqThvQeVgRidctRgcz06WCLUvzIG0";
+// ── PASTE YOUR GEMINI API KEY HERE ──────────────────────────────
+const GEMINI_KEY = "AIzaSyAEIrp7pFQ7MujfZLwzBrz6kB9EiMIVOCY";
+// ────────────────────────────────────────────────────────────────
+
+const API = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_KEY}`;
+
 let hist = [], imgs = [], busy = false;
 
 const SYS = `You are Sniper AI — a world-class professional AI trading analyst created by FX Sniper (WhatsApp: +44 7417 446776 | Instagram: @fx.snipers7). Licensed and copyrighted under FX Sniper © All Rights Reserved.
@@ -362,18 +232,25 @@ WHEN A CHART IMAGE IS UPLOADED:
 4. Identify chart patterns (H&S, Double Top/Bottom, Triangles, Flags, Wedges, etc.)
 5. Read candlestick patterns (Engulfing, Pin Bar, Doji, etc.)
 6. Note visible indicators (RSI, MACD, EMA, Bollinger Bands, etc.)
-7. Give a clear TRADE SIGNAL with: Direction (BUY/SELL), Entry Zone, Stop Loss, Take Profit 1 & 2, Risk/Reward Ratio, Confidence %
-8. Explain your reasoning
+7. Give a clear TRADE SIGNAL with:
+   - Direction: BUY or SELL
+   - Entry Zone
+   - Stop Loss
+   - Take Profit 1 & Take Profit 2
+   - Risk/Reward Ratio
+   - Confidence %
+8. Explain your reasoning clearly
 
-FORMAT: Use **bold** for key levels and direction. Be direct and confident. End with a brief risk disclaimer.
+FORMAT: Use **bold** for key levels and direction. Be direct and confident. End chart analyses with a brief risk disclaimer.
 
-You can also answer ANY general question with expert accuracy. Always represent FX Sniper professionally.`;
+You can answer ANY general question with expert accuracy. Always represent FX Sniper with professionalism.`;
 
+// File upload
 async function hf(e) {
   for (const f of Array.from(e.target.files)) {
     if (!f.type.startsWith('image/')) continue;
     const b = await new Promise((r,j)=>{const rd=new FileReader();rd.onload=()=>r(rd.result.split(',')[1]);rd.onerror=j;rd.readAsDataURL(f);});
-    imgs.push({b64:b,mime:f.type,url:URL.createObjectURL(f)});
+    imgs.push({b64:b, mime:f.type, url:URL.createObjectURL(f)});
   }
   e.target.value=''; rp();
 }
@@ -399,33 +276,55 @@ async function send() {
 
   const ws=document.getElementById('ws'); if(ws) ws.remove();
 
-  const parts=[];
   const ci=[...imgs];
-  for(const img of ci) parts.push({type:'image',source:{type:'base64',media_type:img.mime,data:img.b64}});
-  if(txt) parts.push({type:'text',text:txt});
-
-  hist.push({role:'user',content:parts});
   am('user',txt,ci);
   ahe(txt||'📷 Chart uploaded');
-
   el.value=''; el.style.height='auto'; imgs=[]; rp();
+
+  // Build Gemini parts
+  const parts=[];
+  for(const img of ci) parts.push({inlineData:{mimeType:img.mime,data:img.b64}});
+  if(txt) parts.push({text:txt});
+
+  // Build conversation for Gemini
+  const contents = [];
+  // Add history (already in Gemini format)
+  for(const h of hist) contents.push(h);
+  // Add current user message
+  contents.push({role:'user', parts});
+  hist.push({role:'user', parts});
 
   const tid=st();
   try {
-    const res=await fetch(API,{method:'POST', headers: {'Content-Type': 'application/json','x-api-key': API_KEY,'anthropic-version': '2023-06-01','anthropic-dangerous-direct-browser-access': 'true'},
-      body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:4096,system:SYS,messages:hist})});
+    const res = await fetch(API, {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({
+        system_instruction: { parts:[{text: SYS}] },
+        contents: contents,
+        generationConfig: { maxOutputTokens:4096, temperature:0.7 }
+      })
+    });
+
     rt(tid);
-    if(!res.ok){const er=await res.json().catch(()=>({}));throw new Error(er?.error?.message||`Error ${res.status}`);}
-    const d=await res.json();
-    const reply=d.content?.map(b=>b.type==='text'?b.text:'').filter(Boolean).join('\n')||'No response.';
-    hist.push({role:'assistant',content:reply});
+
+    if(!res.ok){
+      const er=await res.json().catch(()=>({}));
+      throw new Error(er?.error?.message||`Error ${res.status}`);
+    }
+
+    const data=await res.json();
+    const reply=data.candidates?.[0]?.content?.parts?.[0]?.text||'No response received.';
+    hist.push({role:'model', parts:[{text:reply}]});
     am('ai',reply,[]);
+
   } catch(err) {
     rt(tid);
     let msg=err.message;
-    if(msg.includes('401')||msg.toLowerCase().includes('auth')||msg.includes('403'))
-      msg='⚠️ **API Key Required**\n\nPlease add your Anthropic API key to activate Sniper AI.\n\nRefer to the setup instructions provided with this file.';
-    hist.push({role:'assistant',content:msg});
+    if(msg.includes('API_KEY')||msg.includes('400')||msg.includes('key')) {
+      msg='⚠️ **API Key Error**\n\nYour Gemini API key is missing or invalid.\n\nOpen index.html on GitHub, find line that says `PASTE_YOUR_GEMINI_KEY_HERE` and replace it with your key from https://aistudio.google.com/apikey';
+    }
+    hist.push({role:'model',parts:[{text:msg}]});
     am('ai',msg,[]);
   }
   busy=false; document.getElementById('sb').disabled=false;
@@ -444,7 +343,7 @@ function am(role,text,images) {
   document.getElementById('mw').scrollTop=99999;
 }
 
-function md(t) {
+function md(t){
   return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
     .replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>').replace(/\*(.*?)\*/g,'<em>$1</em>')
     .replace(/`([^`]+)`/g,'<code>$1</code>').replace(/^#{1,3} (.+)$/gm,'<h3>$1</h3>')
@@ -452,7 +351,7 @@ function md(t) {
     .replace(/(<li>[\s\S]*?<\/li>)/g,'<ul>$1</ul>').replace(/\n\n/g,'<br/><br/>').replace(/\n/g,'<br/>');
 }
 
-function st() {
+function st(){
   const mi=document.getElementById('mi'), id='ty'+Date.now();
   const row=document.createElement('div'); row.className='mrow'; row.id=id;
   const av=document.createElement('div'); av.className='av ai'; av.textContent='AI';
@@ -465,7 +364,7 @@ function st() {
 }
 function rt(id){const el=document.getElementById(id);if(el)el.remove();}
 
-function ahe(t) {
+function ahe(t){
   const h=document.getElementById('ch');
   h.querySelectorAll('.hi').forEach(i=>i.classList.remove('active'));
   const item=document.createElement('div'); item.className='hi active';
@@ -473,7 +372,7 @@ function ahe(t) {
   h.insertBefore(item,h.firstChild);
 }
 
-function newChat() {
+function newChat(){
   hist=[]; imgs=[]; rp();
   document.getElementById('mi').innerHTML=`
   <div class="welcome" id="ws">
