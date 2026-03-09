@@ -348,6 +348,7 @@ body {
 
 <script>
 const API = "https://api.anthropic.com/v1/messages";
+  const API_KEY = "live_u4KwHI7oJ24KfQ4FfXrCh7cf87AdDyt0cc8qqThvQeVgRidctRgcz06WCLUvzIG0";
 let hist = [], imgs = [], busy = false;
 
 const SYS = `You are Sniper AI — a world-class professional AI trading analyst created by FX Sniper (WhatsApp: +44 7417 446776 | Instagram: @fx.snipers7). Licensed and copyrighted under FX Sniper © All Rights Reserved.
@@ -411,7 +412,7 @@ async function send() {
 
   const tid=st();
   try {
-    const res=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},
+    const res=await fetch(API,{method:'POST', headers: {'Content-Type': 'application/json','x-api-key': API_KEY,'anthropic-version': '2023-06-01','anthropic-dangerous-direct-browser-access': 'true'},
       body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:4096,system:SYS,messages:hist})});
     rt(tid);
     if(!res.ok){const er=await res.json().catch(()=>({}));throw new Error(er?.error?.message||`Error ${res.status}`);}
